@@ -209,6 +209,11 @@ tempCodeRunnerFile.py
 # PyPI configuration file
 .pypirc
 
+# Downloaded third-party inputs and local experiment artifacts
+data/upstream/
+work/
+logs/
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
