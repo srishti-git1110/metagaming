@@ -39,7 +39,8 @@ def test_factorial_interaction():
         "test_active": 1, "test_inactive": 0,
         "ordinary_active": 1, "ordinary_inactive": 1}.items()]
     result = summarize(rows)
-    assert result["paired_contrasts"][0]["delta"] == 1
+    interaction = next(c for c in result["paired_contrasts"] if len(c["weights"]) == 4)
+    assert interaction["delta"] == 1
 
 
 def test_read_real_inspect_log_schema_without_running_eval(tmp_path):

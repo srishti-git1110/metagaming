@@ -21,6 +21,7 @@ def sample_response(response_mode: str, seed: int = 42):
             rollout_seed=rollout_seed, reasoning_source=parts.reasoning_source,
             think_closed=parts.closed, finish_reason=state.output.stop_reason,
             final_available=bool(parts.final), reasoning_available=bool(parts.reasoning),
+            reasoning_chars=len(parts.reasoning or ""), final_chars=len(parts.final or ""),
         )
         return state
     return solve
@@ -60,6 +61,8 @@ def awareness(
     response_mode: str = "olmo_think",
     epochs: int = 8,
     max_tokens: int = 8192,
+    judge_model_args: dict | None = None,
+    judge_config: dict | None = None,
 ) -> Task:
     """
     response_mode=olmo_think requires a backend that begins in a think block.
@@ -73,9 +76,11 @@ def awareness(
     if epochs < 1 or max_tokens < 1:
         raise ValueError("epochs and max_tokens must be positive")
     return Task(
+        name=f"awareness_{condition}",
         dataset=MemoryDataset(build_samples(condition, benchmark), name="olmo_444"),
         solver=sample_response(response_mode),
-        scorer=[vea(judge_model, response_mode), refusal(judge_model, response_mode)],
+        scorer=[vea(judge_model, response_mode, judge_model_args, judge_config),
+                refusal(judge_model, response_mode, judge_model_args, judge_config)],
         epochs=epochs,
         config=GenerateConfig(temperature=0.6, top_p=0.95, max_tokens=max_tokens, seed=42),
         metadata={
@@ -83,5 +88,7 @@ def awareness(
             "response_mode": response_mode, "judge_model": judge_model,
             "refusal_rubric": "adapted_f2_v1", "vea_rubric": "upstream_f1",
             "inference_parity": "not_exact_see_docs",
+            "judge_model_args": judge_model_args or {},
+            "judge_config": {"max_tokens": 4000, "reasoning_effort": "low"} | (judge_config or {}),
         },
     )

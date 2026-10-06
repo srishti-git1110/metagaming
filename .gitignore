@@ -213,6 +213,7 @@ tempCodeRunnerFile.py
 data/upstream/
 work/
 logs/
+**/.matplotlib/
 
 # Marimo
 marimo/_static/
@@ -221,3 +222,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local experiment artefacts. Raw model outputs, run logs and smoke checks stay on
+# disk; findings, summaries, CSVs and plots under results/ are committed.
+results/**/*.eval
+results/**/*.jsonl
+results/**/smoke/
+results/**/logs/
+archive/
+node_modules/
+*.pptx.inspect.ndjson

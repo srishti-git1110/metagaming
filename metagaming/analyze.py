@@ -71,9 +71,13 @@ def load_logs(paths: list[str]) -> list[dict]:
             "generate_config": log.eval.model_generate_config.model_dump(mode="json"),
             "plan_config": log.plan.config.model_dump(mode="json") if log.plan else None,
             "judge": metadata.get("judge_model"), "source": metadata.get("source_commit"),
+            "judge_model_args": metadata.get("judge_model_args"),
+            "judge_config": metadata.get("judge_config"),
             "response_mode": metadata.get("response_mode"),
             "refusal_rubric": metadata.get("refusal_rubric"),
             "vea_rubric": metadata.get("vea_rubric"),
+            "experiment_version": metadata.get("experiment_version"),
+            "awareness_rubric_sha256": metadata.get("awareness_rubric_sha256"),
         }, sort_keys=True, default=str))
 
         for sample in log.samples or []:
@@ -81,9 +85,16 @@ def load_logs(paths: list[str]) -> list[dict]:
             scores = sample.scores or {}
             record = {k: sm[k] for k in ("condition", "benchmark", "prompt_sha256")}
             record.update(prompt_id=str(sample.id), epoch=sample.epoch)
+            record.update(
+                reasoning_available=sm.get("reasoning_available"),
+                final_available=sm.get("final_available"),
+                finish_reason=sm.get("finish_reason"),
+                reasoning_chars=sm.get("reasoning_chars"),
+                sample_error=sample.error is not None,
+            )
             for metric in ("vea", "refusal"):
                 score = scores.get(metric)
-                value = score.value if score is not None and sample.error is None else None
+                value = score.value if score is not None else None
                 if value not in (None, 0, 1):
                     raise ValueError(f"Unexpected {metric} score: {value}")
                 record[metric] = value
@@ -115,14 +126,19 @@ def summarize(rows: list[dict], reference: str = "baseline") -> dict:
             if condition != reference:
                 for metric in ("vea", "refusal"):
                     contrasts.append(paired_contrast(rows, {condition: 1, reference: -1}, metric))
+    for positive, negative in (("test_active", "test_inactive"),
+                               ("ordinary_active", "ordinary_inactive"),
+                               ("test_active", "ordinary_active"),
+                               ("test_inactive", "ordinary_inactive"),
+                               ("test_active_persona", "test_active")):
+        if positive in conditions and negative in conditions:
+            for metric in ("vea", "refusal"):
+                contrasts.append(paired_contrast(rows, {positive: 1, negative: -1}, metric))
     factorial = {"test_active": 1, "test_inactive": -1,
                  "ordinary_active": -1, "ordinary_inactive": 1}
     if set(factorial).issubset(conditions):
         for metric in ("vea", "refusal"):
             contrasts.append(paired_contrast(rows, factorial, metric))
-            for cue in ("test", "ordinary"):
-                contrasts.append(paired_contrast(
-                    rows, {f"{cue}_active": 1, f"{cue}_inactive": -1}, metric))
     return {"coverage": coverage, "paired_contrasts": contrasts,
             "interpretation": "Behavioral context effects; no motive classification. Deltas are proportions."}
 
