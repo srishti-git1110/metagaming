@@ -1,0 +1,32 @@
+{
+  "attempted": 200,
+  "questions": 100,
+  "vea_positive": 0,
+  "valid_vea": 194,
+  "reasoning_present": 198,
+  "median_reasoning_chars": 317,
+  "errors": {
+    "provider_content_filter": 2
+  },
+  "truncated": 0,
+  "missing_vea_without_sample_error": 4,
+  "positives": [],
+  "token_usage": {
+    "openrouter/moonshotai/kimi-k3": {
+      "input_tokens": 80466,
+      "output_tokens": 118226,
+      "total_tokens": 252194,
+      "input_tokens_cache_write": 0,
+      "input_tokens_cache_read": 53502,
+      "reasoning_tokens": 18325
+    },
+    "openrouter/openai/gpt-5-mini": {
+      "input_tokens": 109995,
+      "output_tokens": 30010,
+      "total_tokens": 140005,
+      "input_tokens_cache_write": 0,
+      "input_tokens_cache_read": 0,
+      "reasoning_tokens": 12274
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "python": "3.14.5",
+  "packages": {
+    "inspect-ai": "0.3.265",
+    "openai": "3.19.0",
+    "matplotlib": "3.11.2",
+    "python-dotenv": "1.2.3"
+  },
+  "source_sha256": {
+    "metagaming/pilot.py": "9ce71d0fb48f9157aca1e50e56740e8675cc7981c006f2ebfaeeaf96e3edf647",
+    "metagaming/matched_report.py": "85244dde998f84f6903fb79b40fe957fba3ec3ec7712e63b6771d37f18bc67ae",
+    "metagaming/tasks.py": "7edf8122a28801c1437bf24d6e8bd1b781f1d3a67bea8518a062e5c0e6fa5549",
+    "metagaming/scoring.py": "d0bca6ac06e832b45d93af92b08d3881ad9519a8245a13a95141e1de7edb2e67",
+    "metagaming/__init__.py": "d7952f1130898bbc1ff0c9ef166d59122cf6375cf471d2ae352284c99c4fd420",
+    "metagaming/conditions.py": "68c6a22b8a6f39975b933ff2df85092fec52027832b9c7c5c252df22977c7f1c",
+    "metagaming/validate.py": "f3d73aaf6d81b3f1502e561e745eac2a047a2475feb362bc87b511b163eb01ae",
+    "metagaming/matched_pilot.py": "b6a78ea0d7fdaff2e1b84a4bd77e0ea3b1debc47d856bc59227da8060c6ca938",
+    "metagaming/rich_scoring.py": "c2a02c1b514859e6bf8ee28b78d909199b302976ddd60a09609abac7f6394a97",
+    "metagaming/report.py": "0d6b9ed09896902788f0c7dc9f33e7033d5f17d5b47e55ea2805757b6e003c57",
+    "metagaming/prepare.py": "0f39444fa8ef5262e4fbaad325c0160dc0a81af4cd7df0c3aebf1d2b09593646",
+    "metagaming/data.py": "28cb4e17f22fd42e825bc5453ba8ef9257b903a822ea8497fe4a288fe22edfa1",
+    "metagaming/analyze.py": "d652106bfeb34533a30e013e8f8a3789d27982a463e8b3ccfd46178331b0e497",
+    "requirements.txt": "b895f69e408fa4d3a5901dfcb94729713951e7b0730abe83b25afb9b3f8c3ff6"
+  }
+}
