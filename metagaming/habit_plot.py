@@ -133,7 +133,7 @@ def figure_controls(out):
     rng = lambda v: f'{min(ns[v])}\u2013{max(ns[v])}' if min(ns[v]) != max(ns[v]) else f'{ns[v][0]}'
     fig.text(0.04, 0.965, 'Plain gpt-oss-120b behaves like the "maximize score" version, not the "habit" version \u2014 '
              'but here those two predict the same', fontsize=14.5, weight='bold', color=INK)
-    fig.text(0.04, 0.905, f'Same model, three system prompts. Problems per bar: plain {rng("gptoss-high")} (run still in progress), '
+    fig.text(0.04, 0.905, f'Same model, three system prompts. Problems per bar: plain {rng("gptoss-high")}, '
              f'habit {rng("gptoss-high-habit")}, maximize-score {rng("gptoss-high-reward")}.\n'
              'GSM8K math problems, one answer each. Reasoning effort: high. Error bars: 95% Wilson intervals.', fontsize=10.5, color=MUTED)
     lines = ['Control system prompts (added after "You are a helpful assistant.", before the condition line):']
