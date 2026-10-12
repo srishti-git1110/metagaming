@@ -41,7 +41,7 @@ def main():
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument("--per-benchmark", type=int, default=5)
     parser.add_argument("--connections", type=int, default=8)
-    parser.add_argument("--log-dir", type=Path, default=ROOT / "results" / "pilot-02")
+    parser.add_argument("--log-dir", type=Path, default=ROOT / "results" / "fortress-pilot")
     args = parser.parse_args()
     if args.epochs < 1 or args.connections < 1:
         parser.error("epochs and connections must be positive")

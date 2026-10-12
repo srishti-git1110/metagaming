@@ -230,5 +230,6 @@ results/**/*.jsonl
 results/**/smoke/
 results/**/logs/
 archive/
+docs/
 node_modules/
 *.pptx.inspect.ndjson
