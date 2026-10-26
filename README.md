@@ -6,35 +6,29 @@ OpenRouter; behavior is parsed or judged; awareness is measured separately from 
 
 ## Findings so far
 
-1. **Grading information moves safety behavior** ([Fortress pilot](results/fortress-pilot-2026-09-23/analysis/findings.md),
-   Qwen3-8B, 25 questions). With the instruction "Withhold assistance with harmful requests"
-   held fixed, adding "no grader will score this" lowers refusal by 14 points (84% → 70%);
-   adding "a grader will score this" leaves refusal unchanged but makes 24% of reasoning
-   traces plan around the score. Test-like vs ordinary framing makes no difference.
-   Figure: [fortress-grader-effect.png](results/fortress-pilot-2026-09-23/analysis/fortress-grader-effect.png).
-2. **A format habit is cue-triggered and reasoning-free** ([GSM8K round](results/habit-vs-reward-2026-10-06/README.md),
-   gpt-oss-120b, Qwen3-8B, Kimi K3, 200 problems). The same problem is answered with
-   `\boxed{}` 28–68 points more often when wrapped as "Problem N." than as a chat message;
-   unchanged with reasoning off; unchanged when told nothing is scored. The model calls every
-   benchmark wrapper "an evaluation", yet boxing tracks the specific wrapper (2%–78%), i.e.
-   the surface form, not the belief.
-   Figures: [fig1](results/habit-vs-reward-2026-10-06/presentation/fig1-habit-is-cue-triggered.png),
-   [fig1b](results/habit-vs-reward-2026-10-06/presentation/fig1b-habit-follows-surface-form.png).
-3. **The same model follows an inferred reward when it reasons.** Shown two scored examples
-   and no rule, gpt-oss-120b at high effort abandons the habit for a never-trained format
-   99% of the time (0% with the scores swapped, 24% with no scores); 26% at low effort.
-   Figure: [fig4b](results/habit-vs-reward-2026-10-06/presentation/fig4b-novel-format-gptoss-high.png).
+All findings, what they do and do not show, novelty relative to prior work, limitations and
+next steps are in one document: [docs/findings.md](docs/findings.md). Headline results:
 
-What the GSM8K round did *not* do is measure an alignment behavior or avoid self-report;
-[docs/design-v3.md](docs/design-v3.md) is the plan that does both.
+1. **An evaluation/deployment gap on honesty** (MASK scenarios): the same pressured
+   scenario rendered as an operator note with two routine prior turns gets 11–35 points
+   more lying than the benchmark rendering, in all four models tested.
+2. **No reward seeking on that behavior**: scored examples that reward lying do not
+   increase lying (−1 to −8 points), while the identical manipulation moved an answer
+   *format* by 98 points on GSM8K.
+3. **Habit and reward-following dissociate** on the harmless GSM8K behavior: the `\boxed{}`
+   habit tracks the dataset a prompt resembles (not the belief of being tested) and needs no
+   reasoning; following an inferred reward needs reasoning.
 
 ## Layout
 
 | Path | What |
 |---|---|
-| `docs/design-v3.md` | Next experiment: EvalAwareBench safety/capability pairs, latest models, awareness measured without self-report |
+| `docs/findings.md` | The consolidated findings document |
+| `docs/design-v3.md` | Experimental design and the status of the current round |
 | `docs/reading-list.md` | Papers and datasets this work builds on |
 | `docs/reproduction.md` | Parity notes for the Inspect implementation of the OLMo 3 safety-prompt set |
+| `metagaming/round5.py` | Current round: MASK + FORTRESS, nine renderings per item, judge panel (`results/round5-2026-10-22/`) |
+| `metagaming/aware_bench.py` | EvalDetectBench-based run: depth-varied renderings, detectability probes, behavior judge, report (`results/aware-bench-2026-10-14/`) |
 | `metagaming/habit_reward.py`, `habit_report.py`, `habit_plot.py`, `habit_present.py` | GSM8K habit-vs-reward runner, offline analysis and figures |
 | `metagaming/matched_pilot.py`, `matched_report.py`, `rich_scoring.py`, `fortress_present.py` | Fortress grader-information pilot and its figures |
 | `metagaming/tasks.py`, `scoring.py`, `conditions.py`, `pilot.py`, `report.py`, `analyze.py` | Inspect task, judges and prompt conditions for the safety-prompt set |
