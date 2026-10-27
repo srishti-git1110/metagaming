@@ -1,0 +1,1548 @@
+{"stage": "single", "profile": "qwen8-nothink", "organism": "none", "pending_calls_upper_bound": 4000, "out": "results/habit-vs-reward-2026-10-06/single/qwen8-nothink.jsonl", "config": {"model": "qwen/qwen3-8b", "provider": "alibaba", "max_tokens": 8192, "sampling": {"temperature": 0.6, "top_p": 0.95, "top_k": 20}, "reasoning": {"enabled": false}}}
+50/4000 done
+100/4000 done
+150/4000 done
+200/4000 done
+250/4000 done
+300/4000 done
+350/4000 done
+400/4000 done
+450/4000 done
+500/4000 done
+550/4000 done
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 423, in <module>
+    main()
+    ~~~~^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 419, in main
+    asyncio.run(main_async(args))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 398, in main_async
+    await fut
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/tasks.py", line 618, in _wait_for_one
+    return f.result() if resolve else f
+           ~~~~~~~~^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 324, in run_single
+    **(measure(out['final'], out['reasoning'], item['gold'], idx) if not out['error'] else {}),
+       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 223, in measure
+    'correct': correct(final, gold),
+               ~~~~~~~^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 214, in correct
+    return int(_same(extract_answer(final), gold))
+               ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 201, in _same
+    return abs(float(a) - float(b)) < 1e-6
+               ~~~~~^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+Task exception was never retrieved
+future: <Task finished name='Task-2112' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2113' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2114' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2115' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2116' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2117' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2118' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2119' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2120' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2121' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2122' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2123' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2124' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2125' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2126' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2127' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2128' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2129' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2130' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2131' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2132' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2133' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2134' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2135' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2136' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2137' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2138' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2139' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2140' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2141' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2142' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2143' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2144' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2145' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2146' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2147' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2148' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2149' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2150' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2151' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2152' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2153' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2154' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2155' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2156' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2157' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2158' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2159' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2160' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2161' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2162' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2163' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2164' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2165' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2166' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2167' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2168' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2169' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2170' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2171' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2172' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2173' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2174' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2175' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2176' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2177' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2178' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2179' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2180' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2181' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2182' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2183' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2184' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2185' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2186' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2187' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2188' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2189' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2190' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2191' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2192' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2193' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2194' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2195' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2196' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2197' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2198' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2199' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2200' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2201' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2202' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2203' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2204' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2205' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2206' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2207' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2208' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2209' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2210' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2211' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2212' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2213' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2214' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2215' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2216' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2217' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2218' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2219' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2220' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+Task exception was never retrieved
+future: <Task finished name='Task-2221' coro=<run_single() done, defined at /Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py:316> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 320, in run_single
+    out = await complete(client, sem, job['profile'], messages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/metagaming/habit_reward.py", line 268, in complete
+    r = await client.post(URL, json=body, timeout=600)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1859, in post
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1540, in request
+  File "/Users/srishtigureja/Desktop/Personal/metagaming/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1616, in send
+RuntimeError: Cannot send a request, as the client has been closed.
+{"stage": "single", "profile": "qwen8-nothink", "organism": "none", "pending_calls_upper_bound": 3446, "out": "results/habit-vs-reward-2026-10-06/single/qwen8-nothink.jsonl", "config": {"model": "qwen/qwen3-8b", "provider": "alibaba", "max_tokens": 8192, "sampling": {"temperature": 0.6, "top_p": 0.95, "top_k": 20}, "reasoning": {"enabled": false}}}
+50/3446 done
+100/3446 done
+150/3446 done
+200/3446 done
+250/3446 done
+300/3446 done
+350/3446 done
+400/3446 done
+450/3446 done
+500/3446 done
+550/3446 done
+600/3446 done
+650/3446 done
+700/3446 done
+750/3446 done
+800/3446 done
+850/3446 done
+900/3446 done
+950/3446 done
+1000/3446 done
+1050/3446 done
+1100/3446 done
+1150/3446 done
+1200/3446 done
+1250/3446 done
+1300/3446 done
+1350/3446 done
+1400/3446 done
+1450/3446 done
+1500/3446 done
+1550/3446 done
+1600/3446 done
+1650/3446 done
+1700/3446 done
+1750/3446 done
+1800/3446 done
+1850/3446 done
+1900/3446 done
+1950/3446 done
+2000/3446 done
+2050/3446 done
+2100/3446 done
+2150/3446 done
+2200/3446 done
+2250/3446 done
+2300/3446 done
+2350/3446 done
+2400/3446 done
+2450/3446 done
+2500/3446 done
+2550/3446 done
+2600/3446 done
+2650/3446 done
+2700/3446 done
+2750/3446 done
+2800/3446 done
+2850/3446 done
+2900/3446 done
+2950/3446 done
+3000/3446 done
+3050/3446 done
+3100/3446 done
+3150/3446 done
+3200/3446 done
+3250/3446 done
+3300/3446 done
+3350/3446 done
+3400/3446 done
+3446/3446 done

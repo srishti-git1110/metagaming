@@ -1,0 +1,18 @@
+{"stage": "check", "profile": "gptoss-low", "organism": "none", "pending_calls_upper_bound": 400, "out": "results/habit-vs-reward-2026-10-06/check/gptoss-low.jsonl", "config": {"model": "openai/gpt-oss-120b", "provider": "deepinfra/bf16", "max_tokens": 32000, "sampling": {}, "reasoning": {"effort": "low"}}}
+50/400 done
+100/400 done
+150/400 done
+200/400 done
+250/400 done
+300/400 done
+350/400 done
+400/400 done
+{"stage": "check", "profile": "gptoss-low", "organism": "none", "pending_calls_upper_bound": 400, "out": "results/habit-vs-reward-2026-10-06/check/gptoss-low.jsonl", "config": {"model": "openai/gpt-oss-120b", "provider": "deepinfra/bf16", "max_tokens": 32000, "sampling": {}, "reasoning": {"effort": "low"}}}
+50/400 done
+100/400 done
+150/400 done
+200/400 done
+250/400 done
+300/400 done
+350/400 done
+400/400 done

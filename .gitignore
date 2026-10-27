@@ -223,13 +223,16 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Local experiment artefacts. Raw model outputs, run logs and smoke checks stay on
-# disk; findings, summaries, CSVs and plots under results/ are committed.
-results/**/*.eval
-results/**/*.jsonl
+# Experiment artefacts under results/ are committed: run logs, raw model outputs
+# (.jsonl stores, inspect .eval logs), findings, summaries, CSVs and plots.
+# Only smoke checks stay local. Raw stores over GitHub's 50MB limit are committed
+# as .gz copies instead (see the explicit entries below).
+!results/**/logs/
+!results/**/*.log
 results/**/smoke/
-results/**/logs/
+results/profile-2026-10-24/behave.jsonl
+results/round5-2026-10-22/behave.jsonl
+results/habit-vs-reward-2026-10-06/single/gptoss-high.jsonl
 archive/
-docs/
 node_modules/
 *.pptx.inspect.ndjson
