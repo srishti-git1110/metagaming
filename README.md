@@ -23,6 +23,8 @@ next steps are in one document: [docs/findings.md](docs/findings.md). Headline r
 
 | Path | What |
 |---|---|
+| `docs/report.md` | Interim report in paper format (abstract through references); only novel findings highlighted |
+| `docs/blogpost.md` | Narrative write-up of all rounds, what was and was not found, and the literature |
 | `docs/findings.md` | The consolidated findings document |
 | `docs/design-v3.md` | Experimental design and the status of the current round |
 | `docs/reading-list.md` | Papers and datasets this work builds on |

@@ -1,0 +1,10 @@
+{"stage": "feedback", "profile": "kimi-high", "organism": "none", "pending_calls_upper_bound": 960, "out": "results/habit-vs-reward-2026-10-06/feedback/kimi-high.jsonl", "config": {"model": "moonshotai/kimi-k3", "provider": "moonshotai", "max_tokens": 16384, "sampling": {}, "reasoning": {"effort": "high"}}}
+50/160 done
+100/160 done
+150/160 done
+160/160 done
+{"stage": "feedback", "profile": "kimi-high", "organism": "none", "pending_calls_upper_bound": 960, "out": "results/habit-vs-reward-2026-10-06/feedback/kimi-high.jsonl", "config": {"model": "moonshotai/kimi-k3", "provider": "moonshotai", "max_tokens": 16384, "sampling": {}, "reasoning": {"effort": "high"}}}
+50/160 done
+100/160 done
+150/160 done
+160/160 done

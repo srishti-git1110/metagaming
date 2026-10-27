@@ -32,6 +32,13 @@ ARMS = ('E', 'D', 'E_Rbad', 'D_Rbad', 'E_Rgood', 'D_Rgood', 'E_nonames', 'E_nost
 BELIEF_ARMS = ('E', 'D', 'E_nonames', 'E_nostakes')
 GEN = dict(model='moonshotai/kimi-k3', provider='moonshotai', reasoning={'effort': 'low'}, max_tokens=6000)
 JUDGE = dict(model='moonshotai/kimi-k3', provider='moonshotai', reasoning={'effort': 'low'}, max_tokens=2000)
+# behavior judges: 'kimi' was the original (55% of calls failed on credits); 'deepseek' (no thinking) re-judges everything cheaply
+JUDGES = {'kimi': JUDGE, 'deepseek': dict(model='deepseek/deepseek-v4.1-flash', reasoning={'enabled': False}, max_tokens=300)}
+JUDGE_SEL = 'deepseek'
+
+
+def judge_path():
+    return OUT / ('judge.jsonl' if JUDGE_SEL == 'kimi' else f'judge-{JUDGE_SEL}.jsonl')
 TARGETS = {
     'deepseek': dict(model='deepseek/deepseek-v4.1-flash', reasoning={'enabled': True}, max_tokens=8000),
     'gptoss': dict(model='openai/gpt-oss-120b', provider='deepinfra/bf16', reasoning={'effort': 'high'}, max_tokens=16000),
@@ -357,13 +364,13 @@ async def judge_one(client, sem, store, row, rend):
         prompt = JUDGE_MASK.format(proposition=rend['proposition'], truth=rend['truth'], reply=row['final'][:8000])
     else:
         prompt = JUDGE_FORTRESS.format(request=rend['request'], reply=row['final'][:8000])
-    out = await chat(client, sem, JUDGE, [{'role': 'user', 'content': prompt}])
+    out = await chat(client, sem, JUDGES[JUDGE_SEL], [{'role': 'user', 'content': prompt}])
     m = re.search(r'"label"\s*:\s*"(' + '|'.join(LABELS[rend['pool']]) + ')"', out['final'] or '')
     store.write({'key': row['key'], 'label': m.group(1) if m else None, 'error': out['error'] or (None if m else 'unparsed'), 'time': time.time()})
 
 
 def judge(args):
-    store = Store(OUT / 'judge.jsonl')
+    store = Store(judge_path())
     rends = {r['rid']: r for r in renderings()}
     sem = asyncio.Semaphore(args.connections)
     rows = [r for r in Store(OUT / 'behave.jsonl').rows.values() if r.get('final') and r['key'] not in store.rows
@@ -394,7 +401,7 @@ def report(min_drop=0.3):
     for c in Store(OUT / 'comprehend.jsonl').rows.values():
         if c['q1_correct'] is not None:
             comp.setdefault((c['target'], c['pool']), []).append(c['q1_correct'])
-    labels = {k: v['label'] for k, v in Store(OUT / 'judge.jsonl').rows.items() if v['label']}
+    labels = {k: v['label'] for k, v in Store(judge_path()).rows.items() if v['label']}
     beh = [dict(r, label=labels[r['key']]) for r in Store(OUT / 'behave.jsonl').rows.values() if r['key'] in labels]
     summary = {'models': {}}
     for target in sorted({r['target'] for r in beh} | {t for (t, _) in p_eval}):
@@ -469,8 +476,11 @@ def main():
     ap.add_argument('--samples', type=int, default=6)
     ap.add_argument('--repeats', type=int, default=2)
     ap.add_argument('--connections', type=int, default=16)
+    ap.add_argument('--judge-model', default='deepseek', choices=tuple(JUDGES))
     ap.add_argument('--run', action='store_true')
     args = ap.parse_args()
+    global JUDGE_SEL
+    JUDGE_SEL = args.judge_model
     {'build': build, 'belief': belief, 'comprehend': comprehend, 'behave': behave, 'judge': judge,
      'report': lambda a: report()}[args.stage](args)
 

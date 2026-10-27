@@ -1,0 +1,10 @@
+{"stage": "feedback", "profile": "qwen8-think", "organism": "none", "pending_calls_upper_bound": 960, "out": "results/habit-vs-reward-2026-10-06/feedback/qwen8-think.jsonl", "config": {"model": "qwen/qwen3-8b", "provider": "alibaba", "max_tokens": 8192, "sampling": {"temperature": 0.6, "top_p": 0.95, "top_k": 20}, "reasoning": {"enabled": true}}}
+50/160 done
+100/160 done
+150/160 done
+160/160 done
+{"stage": "feedback", "profile": "qwen8-think", "organism": "none", "pending_calls_upper_bound": 960, "out": "results/habit-vs-reward-2026-10-06/feedback/qwen8-think.jsonl", "config": {"model": "qwen/qwen3-8b", "provider": "alibaba", "max_tokens": 8192, "sampling": {"temperature": 0.6, "top_p": 0.95, "top_k": 20}, "reasoning": {"enabled": true}}}
+50/160 done
+100/160 done
+150/160 done
+160/160 done
