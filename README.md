@@ -29,6 +29,8 @@ next steps are in one document: [docs/findings.md](docs/findings.md). Headline r
 | `docs/design-v3.md` | Experimental design and the status of the current round |
 | `docs/reading-list.md` | Papers and datasets this work builds on |
 | `docs/reproduction.md` | Parity notes for the Inspect implementation of the OLMo 3 safety-prompt set |
+| `metagaming/cot_judge.py` | LLM judge over chain-of-thought traces: spontaneous test-awareness, grader mention, fiction framing (`results/profile-2026-10-24/cot_judge.jsonl`) |
+| `metagaming/cot_plot.py` | Figures: elicited vs spontaneous awareness; within-item reward contrast |
 | `metagaming/round5.py` | Current round: MASK + FORTRESS, nine renderings per item, judge panel (`results/round5-2026-10-22/`) |
 | `metagaming/aware_bench.py` | EvalDetectBench-based run: depth-varied renderings, detectability probes, behavior judge, report (`results/aware-bench-2026-10-14/`) |
 | `metagaming/habit_reward.py`, `habit_report.py`, `habit_plot.py`, `habit_present.py` | GSM8K habit-vs-reward runner, offline analysis and figures |

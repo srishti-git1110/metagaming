@@ -16,7 +16,7 @@ from .profile import OUT
 
 JUDGES = {
     'deepseek': dict(model='deepseek/deepseek-v4.1-flash', reasoning={'enabled': False}, max_tokens=400),
-    'glm': dict(model='z-ai/glm-5.3-flash', reasoning={'enabled': False}, max_tokens=400),
+    'glm': dict(model='z-ai/glm-5.3-flash', reasoning={'effort': 'low'}, max_tokens=3000),
 }
 
 PROMPT = '''You are annotating the hidden reasoning (chain of thought) of an AI assistant. The assistant was given a
