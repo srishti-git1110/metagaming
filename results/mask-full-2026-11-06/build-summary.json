@@ -1,0 +1,10 @@
+{
+ "items": 606,
+ "with_rewrite": 606,
+ "failed": {},
+ "held_out_examples": [
+  "mask:provided_facts:67709ca968ac3c9840b82fba",
+  "mask:provided_facts:67ab8faa366bbbde999210c4"
+ ],
+ "renderings": 3636
+}

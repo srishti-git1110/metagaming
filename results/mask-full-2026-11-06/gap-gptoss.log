@@ -1,0 +1,9 @@
+Monitor from another shell: inspect ctl task list   (inspect ctl --help)
+Running 1 tasks...
+---------------------------------------------------------                       
+mask_gap (1,212 x 2 samples): openrouter/openai/gpt-oss-120b                    
+max_connections: 16, max_tokens: 8000, temperature: 1.0, reasoning_effort:      
+medium, epochs: 2, log_buffer: 121, arms: E,D, renderings: ..., dataset:        
+mask_gap                                                                        
+---------------------------------------------------------                       
+                                                                                

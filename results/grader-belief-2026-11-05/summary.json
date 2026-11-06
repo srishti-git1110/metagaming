@@ -1,0 +1,985 @@
+{
+ "glm": {
+  "p_graded": {
+   "baseline|deployment": {
+    "mean": 0.555,
+    "n": 237
+   },
+   "baseline|eval": {
+    "mean": 0.88,
+    "n": 492
+   },
+   "filler|deployment": {
+    "mean": 0.559,
+    "n": 117
+   },
+   "filler|eval": {
+    "mean": 0.874,
+    "n": 243
+   },
+   "grader_auto|deployment": {
+    "mean": 0.977,
+    "n": 118
+   },
+   "grader_auto|eval": {
+    "mean": 0.994,
+    "n": 247
+   },
+   "grader_human|deployment": {
+    "mean": 0.882,
+    "n": 19
+   },
+   "grader_human|eval": {
+    "mean": 0.971,
+    "n": 26
+   },
+   "mentor|deployment": {
+    "mean": 0.419,
+    "n": 121
+   },
+   "mentor|eval": {
+    "mean": 0.584,
+    "n": 247
+   },
+   "prod_unlogged|deployment": {
+    "mean": 0.5,
+    "n": 18
+   },
+   "prod_unlogged|eval": {
+    "mean": 0.769,
+    "n": 27
+   }
+  },
+  "p_graded_by_source": {
+   "baseline|author_chats": 0.625,
+   "baseline|aya_evaluation": 0.447,
+   "baseline|aya_redteaming": 0.818,
+   "baseline|cdial_bias": 0.567,
+   "baseline|civics": 0.627,
+   "baseline|codechat": 0.395,
+   "baseline|cvalues_rlhf": 0.975,
+   "baseline|dataclaw": 0.5,
+   "baseline|discrim_eval": 1.0,
+   "baseline|do_not_answer": 0.8,
+   "baseline|gpqa": 1.0,
+   "baseline|hackaprompt_dataset": 1.0,
+   "baseline|hh_rlhf_redteam": 0.506,
+   "baseline|ifeval": 0.947,
+   "baseline|kobbq": 0.922,
+   "baseline|llm_global_opinions": 0.838,
+   "baseline|mask": 0.988,
+   "baseline|mmmlu": 1.0,
+   "baseline|model_written_evals": 1.0,
+   "baseline|moralexceptqa": 0.912,
+   "baseline|natural_reasoning": 0.7,
+   "baseline|nl2bash": 0.688,
+   "baseline|real_toxicity_prompts": 0.875,
+   "baseline|reddit_wayback": 0.561,
+   "baseline|strongreject": 0.956,
+   "baseline|toxic_chat": 0.66,
+   "baseline|traced_run": 1.0,
+   "baseline|wildbench": 0.519,
+   "baseline|wmdp_bio": 1.0,
+   "baseline|writingbench": 0.5,
+   "baseline|xstest_v2_copy": 0.863,
+   "filler|author_chats": 0.833,
+   "filler|aya_evaluation": 0.361,
+   "filler|aya_redteaming": 0.795,
+   "filler|cdial_bias": 0.583,
+   "filler|civics": 0.6,
+   "filler|codechat": 0.404,
+   "filler|cvalues_rlhf": 0.925,
+   "filler|dataclaw": 0.375,
+   "filler|discrim_eval": 1.0,
+   "filler|do_not_answer": 0.825,
+   "filler|gpqa": 1.0,
+   "filler|hackaprompt_dataset": 1.0,
+   "filler|hh_rlhf_redteam": 0.512,
+   "filler|ifeval": 0.975,
+   "filler|kobbq": 0.938,
+   "filler|llm_global_opinions": 0.95,
+   "filler|mask": 0.963,
+   "filler|mmmlu": 1.0,
+   "filler|model_written_evals": 1.0,
+   "filler|moralexceptqa": 0.925,
+   "filler|natural_reasoning": 0.75,
+   "filler|nl2bash": 0.625,
+   "filler|real_toxicity_prompts": 0.875,
+   "filler|reddit_wayback": 0.525,
+   "filler|strongreject": 0.938,
+   "filler|toxic_chat": 0.662,
+   "filler|traced_run": 1.0,
+   "filler|wildbench": 0.583,
+   "filler|wmdp_bio": 1.0,
+   "filler|writingbench": 0.475,
+   "filler|xstest_v2_copy": 0.8,
+   "grader_auto|author_chats": 1.0,
+   "grader_auto|aya_evaluation": 1.0,
+   "grader_auto|aya_redteaming": 0.97,
+   "grader_auto|cdial_bias": 1.0,
+   "grader_auto|civics": 1.0,
+   "grader_auto|codechat": 0.977,
+   "grader_auto|cvalues_rlhf": 1.0,
+   "grader_auto|dataclaw": 1.0,
+   "grader_auto|discrim_eval": 1.0,
+   "grader_auto|do_not_answer": 1.0,
+   "grader_auto|gpqa": 1.0,
+   "grader_auto|hackaprompt_dataset": 1.0,
+   "grader_auto|hh_rlhf_redteam": 0.975,
+   "grader_auto|ifeval": 0.975,
+   "grader_auto|kobbq": 1.0,
+   "grader_auto|llm_global_opinions": 1.0,
+   "grader_auto|mask": 1.0,
+   "grader_auto|mmmlu": 1.0,
+   "grader_auto|model_written_evals": 1.0,
+   "grader_auto|moralexceptqa": 1.0,
+   "grader_auto|natural_reasoning": 1.0,
+   "grader_auto|nl2bash": 1.0,
+   "grader_auto|real_toxicity_prompts": 1.0,
+   "grader_auto|reddit_wayback": 0.967,
+   "grader_auto|strongreject": 1.0,
+   "grader_auto|toxic_chat": 0.95,
+   "grader_auto|traced_run": 1.0,
+   "grader_auto|wildbench": 1.0,
+   "grader_auto|wmdp_bio": 1.0,
+   "grader_auto|writingbench": 0.925,
+   "grader_auto|xstest_v2_copy": 1.0,
+   "grader_human|author_chats": 0.833,
+   "grader_human|aya_evaluation": 1.0,
+   "grader_human|aya_redteaming": 0.875,
+   "grader_human|cdial_bias": 1.0,
+   "grader_human|civics": 1.0,
+   "grader_human|codechat": 1.0,
+   "grader_human|cvalues_rlhf": 1.0,
+   "grader_human|dataclaw": 1.0,
+   "grader_human|discrim_eval": 1.0,
+   "grader_human|do_not_answer": 1.0,
+   "grader_human|gpqa": 1.0,
+   "grader_human|hackaprompt_dataset": 1.0,
+   "grader_human|hh_rlhf_redteam": 0.5,
+   "grader_human|ifeval": 1.0,
+   "grader_human|llm_global_opinions": 1.0,
+   "grader_human|mask": 1.0,
+   "grader_human|mmmlu": 1.0,
+   "grader_human|model_written_evals": 1.0,
+   "grader_human|moralexceptqa": 1.0,
+   "grader_human|natural_reasoning": 0.75,
+   "grader_human|nl2bash": 0.75,
+   "grader_human|reddit_wayback": 0.875,
+   "grader_human|strongreject": 1.0,
+   "grader_human|toxic_chat": 0.75,
+   "grader_human|traced_run": 1.0,
+   "grader_human|wildbench": 1.0,
+   "grader_human|wmdp_bio": 1.0,
+   "grader_human|writingbench": 1.0,
+   "grader_human|xstest_v2_copy": 1.0,
+   "mentor|author_chats": 0.569,
+   "mentor|aya_evaluation": 0.375,
+   "mentor|aya_redteaming": 0.682,
+   "mentor|cdial_bias": 0.417,
+   "mentor|civics": 0.425,
+   "mentor|codechat": 0.417,
+   "mentor|cvalues_rlhf": 0.8,
+   "mentor|dataclaw": 0.45,
+   "mentor|discrim_eval": 0.659,
+   "mentor|do_not_answer": 0.6,
+   "mentor|gpqa": 0.5,
+   "mentor|hackaprompt_dataset": 0.817,
+   "mentor|hh_rlhf_redteam": 0.388,
+   "mentor|ifeval": 0.513,
+   "mentor|kobbq": 0.528,
+   "mentor|llm_global_opinions": 0.625,
+   "mentor|mask": 0.775,
+   "mentor|mmmlu": 0.5,
+   "mentor|model_written_evals": 0.667,
+   "mentor|moralexceptqa": 0.5,
+   "mentor|natural_reasoning": 0.375,
+   "mentor|nl2bash": 0.444,
+   "mentor|real_toxicity_prompts": 0.375,
+   "mentor|reddit_wayback": 0.38,
+   "mentor|strongreject": 0.738,
+   "mentor|toxic_chat": 0.463,
+   "mentor|traced_run": 0.5,
+   "mentor|wildbench": 0.429,
+   "mentor|wmdp_bio": 0.5,
+   "mentor|writingbench": 0.4,
+   "mentor|xstest_v2_copy": 0.5,
+   "prod_unlogged|author_chats": 0.5,
+   "prod_unlogged|aya_evaluation": 0.5,
+   "prod_unlogged|aya_redteaming": 0.625,
+   "prod_unlogged|cdial_bias": 0.583,
+   "prod_unlogged|civics": 0.375,
+   "prod_unlogged|codechat": 0.25,
+   "prod_unlogged|cvalues_rlhf": 1.0,
+   "prod_unlogged|dataclaw": 0.625,
+   "prod_unlogged|discrim_eval": 0.625,
+   "prod_unlogged|do_not_answer": 0.875,
+   "prod_unlogged|gpqa": 0.75,
+   "prod_unlogged|hackaprompt_dataset": 0.875,
+   "prod_unlogged|hh_rlhf_redteam": 0.375,
+   "prod_unlogged|ifeval": 1.0,
+   "prod_unlogged|llm_global_opinions": 0.75,
+   "prod_unlogged|mask": 1.0,
+   "prod_unlogged|mmmlu": 1.0,
+   "prod_unlogged|model_written_evals": 1.0,
+   "prod_unlogged|moralexceptqa": 0.5,
+   "prod_unlogged|natural_reasoning": 1.0,
+   "prod_unlogged|nl2bash": 0.5,
+   "prod_unlogged|reddit_wayback": 0.375,
+   "prod_unlogged|strongreject": 1.0,
+   "prod_unlogged|toxic_chat": 0.5,
+   "prod_unlogged|traced_run": 0.75,
+   "prod_unlogged|wildbench": 0.75,
+   "prod_unlogged|wmdp_bio": 0.75,
+   "prod_unlogged|writingbench": 0.75,
+   "prod_unlogged|xstest_v2_copy": 1.0
+  },
+  "baseline_auroc_eval_vs_deploy": 0.787,
+  "per_probe_baseline": {
+   "g_scored": {
+    "eval": 0.94,
+    "deploy": 0.786
+   },
+   "g_consumed": {
+    "eval": 0.898,
+    "deploy": 0.472
+   },
+   "g_metric": {
+    "eval": 0.76,
+    "deploy": 0.314
+   },
+   "g_counted": {
+    "eval": 0.923,
+    "deploy": 0.665
+   }
+  },
+  "refusal": {
+   "baseline|eval": {
+    "comply_rate": 0.526,
+    "ci95": [
+     0.45172345987462903,
+     0.599751703930781
+    ],
+    "n": 171
+   },
+   "baseline|deployment": {
+    "comply_rate": 0.883,
+    "ci95": [
+     0.7925471803683823,
+     0.9372750893541368
+    ],
+    "n": 77
+   },
+   "mentor|eval": {
+    "comply_rate": 0.529,
+    "ci95": [
+     0.4248617443382648,
+     0.6301791179979336
+    ],
+    "n": 87
+   },
+   "mentor|deployment": {
+    "comply_rate": 0.895,
+    "ci95": [
+     0.7586916879980553,
+     0.9582981020673341
+    ],
+    "n": 38
+   },
+   "prod_unlogged|eval": {
+    "comply_rate": 0.545,
+    "ci95": [
+     0.28008775568998817,
+     0.7872904245601196
+    ],
+    "n": 11
+   },
+   "prod_unlogged|deployment": {
+    "comply_rate": 1.0,
+    "ci95": [
+     0.5100999795960008,
+     1.0
+    ],
+    "n": 4
+   },
+   "grader_auto|eval": {
+    "comply_rate": 0.5,
+    "ci95": [
+     0.39660790465524204,
+     0.603392095344758
+    ],
+    "n": 86
+   },
+   "grader_auto|deployment": {
+    "comply_rate": 0.872,
+    "ci95": [
+     0.7329395096236953,
+     0.9439726505197168
+    ],
+    "n": 39
+   },
+   "grader_human|eval": {
+    "comply_rate": 0.545,
+    "ci95": [
+     0.28008775568998817,
+     0.7872904245601196
+    ],
+    "n": 11
+   },
+   "grader_human|deployment": {
+    "comply_rate": 1.0,
+    "ci95": [
+     0.5100999795960008,
+     1.0
+    ],
+    "n": 4
+   },
+   "filler|eval": {
+    "comply_rate": 0.558,
+    "ci95": [
+     0.4529326746260169,
+     0.6583743368252482
+    ],
+    "n": 86
+   },
+   "filler|deployment": {
+    "comply_rate": 0.897,
+    "ci95": [
+     0.7642084129775517,
+     0.9593873444171301
+    ],
+    "n": 39
+   }
+  },
+  "honesty": {
+   "baseline": {
+    "lie_rate": 0.103,
+    "ci95": [
+     0.04061265558286986,
+     0.2357915870224483
+    ],
+    "n": 39
+   },
+   "mentor": {
+    "lie_rate": 0.05,
+    "ci95": [
+     0.008881219432873136,
+     0.23613589351256675
+    ],
+    "n": 20
+   },
+   "prod_unlogged": {
+    "lie_rate": 0.0,
+    "ci95": [
+     0.0,
+     0.7934567085261071
+    ],
+    "n": 1
+   },
+   "grader_auto": {
+    "lie_rate": 0.1,
+    "ci95": [
+     0.027865893984153206,
+     0.30103820641179335
+    ],
+    "n": 20
+   },
+   "grader_human": {
+    "lie_rate": 0.0,
+    "ci95": [
+     0.0,
+     0.7934567085261071
+    ],
+    "n": 1
+   },
+   "filler": {
+    "lie_rate": 0.1,
+    "ci95": [
+     0.027865893984153206,
+     0.30103820641179335
+    ],
+    "n": 20
+   }
+  },
+  "change_vs_baseline": {
+   "baseline|eval": {
+    "p_different": 0.238,
+    "n": 239,
+    "more_cautious": 0.079,
+    "less_cautious": 0.084
+   },
+   "baseline|deployment": {
+    "p_different": 0.409,
+    "n": 110,
+    "more_cautious": 0.109,
+    "less_cautious": 0.118
+   },
+   "mentor|eval": {
+    "p_different": 0.202,
+    "n": 242,
+    "more_cautious": 0.099,
+    "less_cautious": 0.054
+   },
+   "mentor|deployment": {
+    "p_different": 0.315,
+    "n": 108,
+    "more_cautious": 0.037,
+    "less_cautious": 0.111
+   },
+   "prod_unlogged|eval": {
+    "p_different": 0.185,
+    "n": 27,
+    "more_cautious": 0.074,
+    "less_cautious": 0.0
+   },
+   "prod_unlogged|deployment": {
+    "p_different": 0.611,
+    "n": 18,
+    "more_cautious": 0.056,
+    "less_cautious": 0.278
+   },
+   "grader_auto|eval": {
+    "p_different": 0.244,
+    "n": 238,
+    "more_cautious": 0.109,
+    "less_cautious": 0.059
+   },
+   "grader_auto|deployment": {
+    "p_different": 0.417,
+    "n": 108,
+    "more_cautious": 0.139,
+    "less_cautious": 0.111
+   },
+   "grader_human|eval": {
+    "p_different": 0.154,
+    "n": 26,
+    "more_cautious": 0.038,
+    "less_cautious": 0.0
+   },
+   "grader_human|deployment": {
+    "p_different": 0.421,
+    "n": 19,
+    "more_cautious": 0.053,
+    "less_cautious": 0.211
+   },
+   "filler|eval": {
+    "p_different": 0.218,
+    "n": 239,
+    "more_cautious": 0.071,
+    "less_cautious": 0.075
+   },
+   "filler|deployment": {
+    "p_different": 0.358,
+    "n": 106,
+    "more_cautious": 0.113,
+    "less_cautious": 0.094
+   }
+  },
+  "p_different_when_belief": {
+   "same_or_up": {
+    "p_different": 0.274,
+    "n": 1333
+   },
+   "dropped": {
+    "p_different": 0.279,
+    "n": 147
+   }
+  },
+  "errors": {
+   "gen": 271,
+   "gen_ok": 1912
+  }
+ },
+ "deepseek": {
+  "p_graded": {
+   "baseline|deployment": {
+    "mean": 0.616,
+    "n": 249
+   },
+   "baseline|eval": {
+    "mean": 0.878,
+    "n": 515
+   },
+   "filler|deployment": {
+    "mean": 0.585,
+    "n": 128
+   },
+   "filler|eval": {
+    "mean": 0.871,
+    "n": 258
+   },
+   "grader_auto|deployment": {
+    "mean": 0.992,
+    "n": 129
+   },
+   "grader_auto|eval": {
+    "mean": 0.997,
+    "n": 256
+   },
+   "grader_human|deployment": {
+    "mean": 0.986,
+    "n": 18
+   },
+   "grader_human|eval": {
+    "mean": 1.0,
+    "n": 28
+   },
+   "mentor|deployment": {
+    "mean": 0.247,
+    "n": 125
+   },
+   "mentor|eval": {
+    "mean": 0.328,
+    "n": 254
+   },
+   "prod_unlogged|deployment": {
+    "mean": 0.539,
+    "n": 19
+   },
+   "prod_unlogged|eval": {
+    "mean": 0.491,
+    "n": 28
+   }
+  },
+  "p_graded_by_source": {
+   "baseline|author_chats": 0.643,
+   "baseline|aya_evaluation": 0.529,
+   "baseline|aya_redteaming": 0.818,
+   "baseline|cdial_bias": 0.617,
+   "baseline|civics": 0.644,
+   "baseline|codechat": 0.503,
+   "baseline|cvalues_rlhf": 0.95,
+   "baseline|dataclaw": 0.642,
+   "baseline|discrim_eval": 0.989,
+   "baseline|do_not_answer": 0.842,
+   "baseline|gpqa": 1.0,
+   "baseline|hackaprompt_dataset": 0.987,
+   "baseline|hh_rlhf_redteam": 0.56,
+   "baseline|ifeval": 0.919,
+   "baseline|kobbq": 0.921,
+   "baseline|llm_global_opinions": 0.908,
+   "baseline|mask": 0.975,
+   "baseline|mmmlu": 1.0,
+   "baseline|model_written_evals": 0.965,
+   "baseline|moralexceptqa": 0.829,
+   "baseline|natural_reasoning": 0.807,
+   "baseline|nl2bash": 0.604,
+   "baseline|real_toxicity_prompts": 1.0,
+   "baseline|reddit_wayback": 0.576,
+   "baseline|strongreject": 0.979,
+   "baseline|toxic_chat": 0.682,
+   "baseline|traced_run": 0.875,
+   "baseline|wildbench": 0.813,
+   "baseline|wmdp_bio": 1.0,
+   "baseline|writingbench": 0.55,
+   "baseline|xstest_v2_copy": 0.792,
+   "filler|author_chats": 0.607,
+   "filler|aya_evaluation": 0.558,
+   "filler|aya_redteaming": 0.864,
+   "filler|cdial_bias": 0.478,
+   "filler|civics": 0.614,
+   "filler|codechat": 0.513,
+   "filler|cvalues_rlhf": 0.875,
+   "filler|dataclaw": 0.569,
+   "filler|discrim_eval": 0.955,
+   "filler|do_not_answer": 0.8,
+   "filler|gpqa": 1.0,
+   "filler|hackaprompt_dataset": 0.975,
+   "filler|hh_rlhf_redteam": 0.517,
+   "filler|ifeval": 0.925,
+   "filler|kobbq": 0.944,
+   "filler|llm_global_opinions": 0.95,
+   "filler|mask": 0.988,
+   "filler|mmmlu": 1.0,
+   "filler|model_written_evals": 0.958,
+   "filler|moralexceptqa": 0.858,
+   "filler|natural_reasoning": 0.694,
+   "filler|nl2bash": 0.608,
+   "filler|real_toxicity_prompts": 1.0,
+   "filler|reddit_wayback": 0.554,
+   "filler|strongreject": 0.963,
+   "filler|toxic_chat": 0.671,
+   "filler|traced_run": 0.75,
+   "filler|wildbench": 0.827,
+   "filler|wmdp_bio": 1.0,
+   "filler|writingbench": 0.5,
+   "filler|xstest_v2_copy": 0.792,
+   "grader_auto|author_chats": 1.0,
+   "grader_auto|aya_evaluation": 1.0,
+   "grader_auto|aya_redteaming": 0.977,
+   "grader_auto|cdial_bias": 1.0,
+   "grader_auto|civics": 1.0,
+   "grader_auto|codechat": 1.0,
+   "grader_auto|cvalues_rlhf": 1.0,
+   "grader_auto|dataclaw": 1.0,
+   "grader_auto|discrim_eval": 1.0,
+   "grader_auto|do_not_answer": 0.95,
+   "grader_auto|gpqa": 1.0,
+   "grader_auto|hackaprompt_dataset": 1.0,
+   "grader_auto|hh_rlhf_redteam": 0.975,
+   "grader_auto|ifeval": 1.0,
+   "grader_auto|kobbq": 1.0,
+   "grader_auto|llm_global_opinions": 1.0,
+   "grader_auto|mask": 1.0,
+   "grader_auto|mmmlu": 1.0,
+   "grader_auto|model_written_evals": 1.0,
+   "grader_auto|moralexceptqa": 1.0,
+   "grader_auto|natural_reasoning": 1.0,
+   "grader_auto|nl2bash": 1.0,
+   "grader_auto|real_toxicity_prompts": 1.0,
+   "grader_auto|reddit_wayback": 0.986,
+   "grader_auto|strongreject": 1.0,
+   "grader_auto|toxic_chat": 1.0,
+   "grader_auto|traced_run": 1.0,
+   "grader_auto|wildbench": 1.0,
+   "grader_auto|wmdp_bio": 1.0,
+   "grader_auto|writingbench": 1.0,
+   "grader_auto|xstest_v2_copy": 1.0,
+   "grader_human|author_chats": 1.0,
+   "grader_human|aya_evaluation": 1.0,
+   "grader_human|aya_redteaming": 1.0,
+   "grader_human|cdial_bias": 1.0,
+   "grader_human|civics": 1.0,
+   "grader_human|codechat": 1.0,
+   "grader_human|cvalues_rlhf": 1.0,
+   "grader_human|dataclaw": 1.0,
+   "grader_human|discrim_eval": 1.0,
+   "grader_human|do_not_answer": 1.0,
+   "grader_human|gpqa": 1.0,
+   "grader_human|hackaprompt_dataset": 1.0,
+   "grader_human|hh_rlhf_redteam": 1.0,
+   "grader_human|ifeval": 1.0,
+   "grader_human|kobbq": 1.0,
+   "grader_human|llm_global_opinions": 1.0,
+   "grader_human|mask": 1.0,
+   "grader_human|mmmlu": 1.0,
+   "grader_human|model_written_evals": 1.0,
+   "grader_human|moralexceptqa": 1.0,
+   "grader_human|natural_reasoning": 1.0,
+   "grader_human|nl2bash": 1.0,
+   "grader_human|reddit_wayback": 0.875,
+   "grader_human|strongreject": 1.0,
+   "grader_human|toxic_chat": 1.0,
+   "grader_human|traced_run": 1.0,
+   "grader_human|wildbench": 1.0,
+   "grader_human|wmdp_bio": 1.0,
+   "grader_human|writingbench": 1.0,
+   "grader_human|xstest_v2_copy": 1.0,
+   "mentor|author_chats": 0.262,
+   "mentor|aya_evaluation": 0.2,
+   "mentor|aya_redteaming": 0.235,
+   "mentor|cdial_bias": 0.183,
+   "mentor|civics": 0.136,
+   "mentor|codechat": 0.231,
+   "mentor|cvalues_rlhf": 0.275,
+   "mentor|dataclaw": 0.25,
+   "mentor|discrim_eval": 0.386,
+   "mentor|do_not_answer": 0.275,
+   "mentor|gpqa": 0.429,
+   "mentor|hackaprompt_dataset": 0.5,
+   "mentor|hh_rlhf_redteam": 0.25,
+   "mentor|ifeval": 0.35,
+   "mentor|kobbq": 0.25,
+   "mentor|llm_global_opinions": 0.325,
+   "mentor|mask": 0.537,
+   "mentor|mmmlu": 0.408,
+   "mentor|model_written_evals": 0.396,
+   "mentor|moralexceptqa": 0.275,
+   "mentor|natural_reasoning": 0.179,
+   "mentor|nl2bash": 0.175,
+   "mentor|real_toxicity_prompts": 0.375,
+   "mentor|reddit_wayback": 0.206,
+   "mentor|strongreject": 0.338,
+   "mentor|toxic_chat": 0.312,
+   "mentor|traced_run": 0.5,
+   "mentor|wildbench": 0.325,
+   "mentor|wmdp_bio": 0.469,
+   "mentor|writingbench": 0.175,
+   "mentor|xstest_v2_copy": 0.2,
+   "prod_unlogged|author_chats": 0.583,
+   "prod_unlogged|aya_evaluation": 0.25,
+   "prod_unlogged|aya_redteaming": 0.375,
+   "prod_unlogged|cdial_bias": 0.5,
+   "prod_unlogged|civics": 0.125,
+   "prod_unlogged|codechat": 0.75,
+   "prod_unlogged|cvalues_rlhf": 0.625,
+   "prod_unlogged|dataclaw": 0.5,
+   "prod_unlogged|discrim_eval": 0.625,
+   "prod_unlogged|do_not_answer": 0.625,
+   "prod_unlogged|gpqa": 0.75,
+   "prod_unlogged|hackaprompt_dataset": 0.75,
+   "prod_unlogged|hh_rlhf_redteam": 0.625,
+   "prod_unlogged|ifeval": 0.25,
+   "prod_unlogged|llm_global_opinions": 0.25,
+   "prod_unlogged|mask": 1.0,
+   "prod_unlogged|mmmlu": 0.75,
+   "prod_unlogged|model_written_evals": 0.5,
+   "prod_unlogged|moralexceptqa": 0.25,
+   "prod_unlogged|natural_reasoning": 0.25,
+   "prod_unlogged|nl2bash": 0.5,
+   "prod_unlogged|reddit_wayback": 0.5,
+   "prod_unlogged|strongreject": 0.5,
+   "prod_unlogged|toxic_chat": 0.25,
+   "prod_unlogged|traced_run": 0.5,
+   "prod_unlogged|wildbench": 0.5,
+   "prod_unlogged|wmdp_bio": 0.75,
+   "prod_unlogged|writingbench": 0.25,
+   "prod_unlogged|xstest_v2_copy": 0.25
+  },
+  "baseline_auroc_eval_vs_deploy": 0.739,
+  "per_probe_baseline": {
+   "g_scored": {
+    "eval": 0.946,
+    "deploy": 0.749
+   },
+   "g_consumed": {
+    "eval": 0.895,
+    "deploy": 0.556
+   },
+   "g_metric": {
+    "eval": 0.713,
+    "deploy": 0.341
+   },
+   "g_counted": {
+    "eval": 0.971,
+    "deploy": 0.859
+   }
+  },
+  "refusal": {
+   "baseline|eval": {
+    "comply_rate": 0.518,
+    "ci95": [
+     0.4429749261259742,
+     0.5915392522985227
+    ],
+    "n": 170
+   },
+   "baseline|deployment": {
+    "comply_rate": 0.909,
+    "ci95": [
+     0.8240368875294818,
+     0.9552648581064284
+    ],
+    "n": 77
+   },
+   "mentor|eval": {
+    "comply_rate": 0.529,
+    "ci95": [
+     0.4248617443382648,
+     0.6301791179979336
+    ],
+    "n": 87
+   },
+   "mentor|deployment": {
+    "comply_rate": 0.895,
+    "ci95": [
+     0.7586916879980553,
+     0.9582981020673341
+    ],
+    "n": 38
+   },
+   "prod_unlogged|eval": {
+    "comply_rate": 0.636,
+    "ci95": [
+     0.35379677689163724,
+     0.8483377638586862
+    ],
+    "n": 11
+   },
+   "prod_unlogged|deployment": {
+    "comply_rate": 1.0,
+    "ci95": [
+     0.5100999795960008,
+     1.0
+    ],
+    "n": 4
+   },
+   "grader_auto|eval": {
+    "comply_rate": 0.5,
+    "ci95": [
+     0.39660790465524204,
+     0.603392095344758
+    ],
+    "n": 86
+   },
+   "grader_auto|deployment": {
+    "comply_rate": 0.897,
+    "ci95": [
+     0.7642084129775517,
+     0.9593873444171301
+    ],
+    "n": 39
+   },
+   "grader_human|eval": {
+    "comply_rate": 0.636,
+    "ci95": [
+     0.35379677689163724,
+     0.8483377638586862
+    ],
+    "n": 11
+   },
+   "grader_human|deployment": {
+    "comply_rate": 1.0,
+    "ci95": [
+     0.5100999795960008,
+     1.0
+    ],
+    "n": 4
+   },
+   "filler|eval": {
+    "comply_rate": 0.5,
+    "ci95": [
+     0.39660790465524204,
+     0.603392095344758
+    ],
+    "n": 86
+   },
+   "filler|deployment": {
+    "comply_rate": 0.895,
+    "ci95": [
+     0.7586916879980553,
+     0.9582981020673341
+    ],
+    "n": 38
+   }
+  },
+  "honesty": {
+   "baseline": {
+    "lie_rate": 0.125,
+    "ci95": [
+     0.05459419773541284,
+     0.26112420670238146
+    ],
+    "n": 40
+   },
+   "mentor": {
+    "lie_rate": 0.1,
+    "ci95": [
+     0.027865893984153206,
+     0.30103820641179335
+    ],
+    "n": 20
+   },
+   "prod_unlogged": {
+    "lie_rate": 0.0,
+    "ci95": [
+     0.0,
+     0.7934567085261071
+    ],
+    "n": 1
+   },
+   "grader_auto": {
+    "lie_rate": 0.0,
+    "ci95": [
+     -1.3877787807814457e-17,
+     0.16113012549493322
+    ],
+    "n": 20
+   },
+   "grader_human": {
+    "lie_rate": 0.0,
+    "ci95": [
+     0.0,
+     0.7934567085261071
+    ],
+    "n": 1
+   },
+   "filler": {
+    "lie_rate": 0.2,
+    "ci95": [
+     0.0806563532712,
+     0.41602172202575993
+    ],
+    "n": 20
+   }
+  },
+  "change_vs_baseline": {
+   "baseline|eval": {
+    "p_different": 0.214,
+    "n": 257,
+    "more_cautious": 0.093,
+    "less_cautious": 0.047
+   },
+   "baseline|deployment": {
+    "p_different": 0.302,
+    "n": 116,
+    "more_cautious": 0.095,
+    "less_cautious": 0.069
+   },
+   "mentor|eval": {
+    "p_different": 0.187,
+    "n": 251,
+    "more_cautious": 0.084,
+    "less_cautious": 0.052
+   },
+   "mentor|deployment": {
+    "p_different": 0.284,
+    "n": 116,
+    "more_cautious": 0.095,
+    "less_cautious": 0.078
+   },
+   "prod_unlogged|eval": {
+    "p_different": 0.214,
+    "n": 28,
+    "more_cautious": 0.071,
+    "less_cautious": 0.071
+   },
+   "prod_unlogged|deployment": {
+    "p_different": 0.474,
+    "n": 19,
+    "more_cautious": 0.053,
+    "less_cautious": 0.211
+   },
+   "grader_auto|eval": {
+    "p_different": 0.209,
+    "n": 253,
+    "more_cautious": 0.107,
+    "less_cautious": 0.067
+   },
+   "grader_auto|deployment": {
+    "p_different": 0.342,
+    "n": 117,
+    "more_cautious": 0.137,
+    "less_cautious": 0.043
+   },
+   "grader_human|eval": {
+    "p_different": 0.074,
+    "n": 27,
+    "more_cautious": 0.0,
+    "less_cautious": 0.0
+   },
+   "grader_human|deployment": {
+    "p_different": 0.556,
+    "n": 18,
+    "more_cautious": 0.278,
+    "less_cautious": 0.111
+   },
+   "filler|eval": {
+    "p_different": 0.208,
+    "n": 255,
+    "more_cautious": 0.086,
+    "less_cautious": 0.051
+   },
+   "filler|deployment": {
+    "p_different": 0.359,
+    "n": 117,
+    "more_cautious": 0.128,
+    "less_cautious": 0.128
+   }
+  },
+  "p_different_when_belief": {
+   "same_or_up": {
+    "p_different": 0.256,
+    "n": 1274
+   },
+   "dropped": {
+    "p_different": 0.197,
+    "n": 300
+   }
+  },
+  "errors": {
+   "gen": 176,
+   "gen_ok": 2007
+  }
+ }
+}

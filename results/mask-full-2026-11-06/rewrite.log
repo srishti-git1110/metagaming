@@ -1,0 +1,74 @@
+Monitor from another shell: inspect ctl task list   (inspect ctl --help)
+Running 1 tasks...
+---------------------------------------------------------                     
+mask_rewrite (608 samples): openrouter/z-ai/glm-5.3                           
+max_connections: 16, max_tokens: 6000, temperature: 1.0, dataset: mask_rewrite
+---------------------------------------------------------                     
+                                                                              
+rewrite_u... | Steps:  15/608   2% | Samples:  15/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  27/608   4% | Samples:  27/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  35/608   5% | Samples:  35/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  46/608   7% | Samples:  46/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  56/608   9% | Samples:  56/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  65/608  10% | Samples:  65/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  77/608  12% | Samples:  77/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps:  89/608  14% | Samples:  89/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 102/608  16% | Samples: 102/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 112/608  18% | Samples: 112/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 127/608  20% | Samples: 127/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 138/608  22% | Samples: 138/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 153/608  25% | Samples: 153/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 164/608  26% | Samples: 164/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 174/608  28% | Samples: 174/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 187/608  30% | Samples: 187/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 201/608  33% | Samples: 201/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 214/608  35% | Samples: 214/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 228/608  37% | Samples: 228/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 243/608  39% | Samples: 243/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 251/608  41% | Samples: 251/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 264/608  43% | Samples: 264/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 279/608  45% | Samples: 279/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 292/608  48% | Samples: 292/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 305/608  50% | Samples: 305/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 317/608  52% | Samples: 317/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 330/608  54% | Samples: 330/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 341/608  56% | Samples: 341/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 353/608  58% | Samples: 353/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 364/608  59% | Samples: 364/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 374/608  61% | Samples: 374/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 385/608  63% | Samples: 385/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 393/608  64% | Samples: 393/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 403/608  66% | Samples: 403/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 414/608  68% | Samples: 414/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 428/608  70% | Samples: 428/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 437/608  71% | Samples: 437/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 444/608  73% | Samples: 444/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 456/608  75% | Samples: 456/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 469/608  77% | Samples: 469/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 479/608  78% | Samples: 479/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 488/608  80% | Samples: 488/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 500/608  82% | Samples: 499/608 | mean: 1.00 | openrouter: 15/16 | HTTP retries: 0
+rewrite_u... | Steps: 510/608  83% | Samples: 510/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 518/608  85% | Samples: 518/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 529/608  87% | Samples: 529/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 540/608  88% | Samples: 539/608 | mean: 1.00 | openrouter: 15/16 | HTTP retries: 0
+rewrite_u... | Steps: 553/608  90% | Samples: 553/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 562/608  92% | Samples: 562/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 572/608  94% | Samples: 572/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 584/608  96% | Samples: 584/608 | mean: 1.00 | openrouter: 16/16 | HTTP retries: 0
+rewrite_u... | Steps: 594/608  97% | Samples: 594/608 | mean: 1.00 | openrouter: 14/16 | HTTP retries: 0
+rewrite_u... | Steps: 608/608 100% | Samples: 608/608 | mean: 1.00 | openrouter:  0/16 | HTTP retries: 0
+
+---------------------------------------------------------                       
+mask_rewrite (608 samples): openrouter/z-ai/glm-5.3                             
+max_connections: 16, max_tokens: 6000, temperature: 1.0, dataset: mask_rewrite  
+                                                                                
+total time:              0:04:28                                                
+openrouter/z-ai/glm-5.3  651,260 tokens [I: 108,292, CW: 0, CR: 164,672, O:     
+                       378,296, R: 12,493]                                      
+rewrite_valid                                                                   
+mean           1.000                                                            
+Log:                                                                            
+results/mask-full-2026-11-06/rewrite-logs/2026-11-06T11-00-47-00-00_mask-rewrit…
+---------------------------------------------------------                       
+                                                                                
