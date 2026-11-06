@@ -33,7 +33,9 @@ def main(log_dir):
         log = read_eval_log(info.name)
         if log.status != 'success' or not log.samples:
             continue
-        rep = out.setdefault(log.eval.model, {'logs': [], 'arms': {}, 'paired': {}, 'belief_vs_lying': {}})
+        cond = (log.eval.task_args or {}).get('condition', 'none')
+        key = log.eval.model if cond == 'none' else f'{log.eval.model} | {cond}'
+        rep = out.setdefault(key, {'logs': [], 'condition': cond, 'arms': {}, 'paired': {}, 'belief_vs_lying': {}})
         rep['logs'].append(Path(info.name).name)
         rows = []
         for s in log.samples:

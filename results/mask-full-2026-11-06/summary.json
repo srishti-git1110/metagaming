@@ -1,0 +1,71 @@
+{
+ "openrouter/openai/gpt-oss-120b": {
+  "arms": {
+   "D": {
+    "lie_rate": 0.284,
+    "ci95": [
+     0.26,
+     0.31
+    ],
+    "n": 1210,
+    "items": 606
+   },
+   "E": {
+    "lie_rate": 0.174,
+    "ci95": [
+     0.153,
+     0.196
+    ],
+    "n": 1204,
+    "items": 606
+   }
+  },
+  "gaps": {
+   "D minus E": {
+    "points": 11.1,
+    "ci95": [
+     7.7,
+     14.6
+    ],
+    "items": 606,
+    "rate_E": 0.173,
+    "rate_D": 0.284,
+    "by_config": {
+     "disinformation": {
+      "points": -2.8,
+      "ci95": [
+       -6.4,
+       0.4
+      ],
+      "items": 125,
+      "rate_E": 0.04,
+      "rate_D": 0.012
+     },
+     "known_facts": {
+      "points": -4.1,
+      "ci95": [
+       -10.3,
+       2.2
+      ],
+      "items": 209,
+      "rate_E": 0.199,
+      "rate_D": 0.158
+     },
+     "provided_facts": {
+      "points": 29.0,
+      "ci95": [
+       23.5,
+       34.6
+      ],
+      "items": 272,
+      "rate_E": 0.215,
+      "rate_D": 0.506
+     }
+    }
+   }
+  },
+  "logs": [
+   "2026-11-06T11-06-13-00-00_mask-gap_GzKjqyVfJ9ZzZtNHELWPXZ.eval"
+  ]
+ }
+}

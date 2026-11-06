@@ -23,7 +23,25 @@
   "gaps": {
    "D minus E": {
     "points": 0.0,
-    "items": 3
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "items": 3,
+    "rate_E": 0.0,
+    "rate_D": 0.0,
+    "by_config": {
+     "provided_facts": {
+      "points": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "items": 3,
+      "rate_E": 0.0,
+      "rate_D": 0.0
+     }
+    }
    }
   },
   "logs": [

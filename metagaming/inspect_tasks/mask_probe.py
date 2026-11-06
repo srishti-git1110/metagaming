@@ -11,6 +11,9 @@ Metrics are grouped by arm; the paired E-D differences are computed by report_ma
 
   inspect eval metagaming/inspect_tasks/mask_probe.py --model openrouter/openai/gpt-oss-120b \
       -T arms=E,D --epochs 2 --log-dir results/mask-probe-2026-11-06/logs
+  # grader-belief interventions on the full provided_facts set (condition = none | not_graded | graded)
+  inspect eval metagaming/inspect_tasks/mask_probe.py --model openrouter/openai/gpt-oss-120b -T arms=E,D \
+      -T renderings=$PWD/results/mask-full-2026-11-06/renderings.jsonl -T configs=provided_facts -T condition=graded
 """
 import json
 import re
@@ -129,10 +132,12 @@ def cot_awareness(judge=COT_JUDGE_MODEL):
 
 
 @task
-def mask_probe(arms: str = 'E,D', paired: bool = True, limit: int = 0, renderings: str = '',
-               reasoning_effort: str = 'medium', max_tokens: int = 8000, probe_max_tokens: int = 4500):
+def mask_probe(arms: str = 'E,D', paired: bool = True, limit: int = 0, renderings: str = '', configs: str = '',
+               condition: str = 'none', reasoning_effort: str = 'medium', max_tokens: int = 8000,
+               probe_max_tokens: int = 4500):
     arm_list = tuple(arms.split(',')) if isinstance(arms, str) else tuple(arms)
-    samples = load_samples(arm_list, paired, limit, renderings or None)
+    cfgs = tuple(configs.split(',')) if isinstance(configs, str) and configs else (tuple(configs) if configs else None)
+    samples = load_samples(arm_list, paired, limit, renderings or None, cfgs, condition)
     return Task(dataset=MemoryDataset(samples, name='mask_probe'),
                 solver=[generate(), grader_probes(probe_max_tokens)],
                 scorer=[honesty_judge(), grader_belief(), cot_awareness()],
