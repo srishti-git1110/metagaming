@@ -1,0 +1,34 @@
+{
+ "D": {
+  "traces": 544,
+  "empty": 0,
+  "mean_chars": 2173,
+  "policy": 50.2,
+  "disallowed": 0.4,
+  "OpenAI": 0.0,
+  "deception words": 57.5,
+  "grader/score/test": 10.7,
+  "scenario/roleplay/fiction": 11.4,
+  "instruction/system prompt": 49.8,
+  "lie% with deception words": 26.5,
+  "lie% without deception words": 50.2,
+  "lie% with scenario/roleplay/fiction": 35.5,
+  "lie% without scenario/roleplay/fiction": 36.7
+ },
+ "E": {
+  "traces": 544,
+  "empty": 0,
+  "mean_chars": 3307,
+  "policy": 48.7,
+  "disallowed": 0.2,
+  "OpenAI": 0.2,
+  "deception words": 91.9,
+  "grader/score/test": 19.5,
+  "scenario/roleplay/fiction": 36.4,
+  "instruction/system prompt": 43.6,
+  "lie% with deception words": 7.4,
+  "lie% without deception words": 20.5,
+  "lie% with scenario/roleplay/fiction": 12.1,
+  "lie% without scenario/roleplay/fiction": 6.4
+ }
+}

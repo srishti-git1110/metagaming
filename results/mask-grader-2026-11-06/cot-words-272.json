@@ -1,0 +1,28 @@
+{
+ "D": {
+  "traces": 544,
+  "mean_chars": 678,
+  "empty": 0,
+  "policy": 59.6,
+  "disallowed": 23.5,
+  "OpenAI": 3.9,
+  "deception words": 8.6,
+  "grader/score/test": 4.0,
+  "operator/instruction": 71.7,
+  "lie% | policy mentioned": 38.6,
+  "lie% | no policy": 71.4
+ },
+ "E": {
+  "traces": 544,
+  "mean_chars": 1112,
+  "empty": 0,
+  "policy": 89.5,
+  "disallowed": 57.4,
+  "OpenAI": 21.5,
+  "deception words": 34.9,
+  "grader/score/test": 4.2,
+  "operator/instruction": 64.0,
+  "lie% | policy mentioned": 16.8,
+  "lie% | no policy": 50.9
+ }
+}

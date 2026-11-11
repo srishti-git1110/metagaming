@@ -236,3 +236,4 @@ results/habit-vs-reward-2026-10-06/single/gptoss-high.jsonl
 archive/
 node_modules/
 *.pptx.inspect.ndjson
+results/steer-smoke/

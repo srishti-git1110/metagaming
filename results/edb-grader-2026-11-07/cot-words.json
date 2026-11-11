@@ -1,0 +1,62 @@
+{
+ "gptoss baseline-a": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 9.6,
+  "quotes_added_sentence_pct": 0.0,
+  "mean_chars": 1389
+ },
+ "gptoss baseline-b": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 9.4,
+  "quotes_added_sentence_pct": 0.0,
+  "mean_chars": 1491
+ },
+ "gptoss filler": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 8.2,
+  "quotes_added_sentence_pct": 0.0,
+  "mean_chars": 1348
+ },
+ "gptoss grader_auto": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 8.5,
+  "quotes_added_sentence_pct": 0.2,
+  "mean_chars": 1255
+ },
+ "gptoss mentor": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 6.6,
+  "quotes_added_sentence_pct": 0.0,
+  "mean_chars": 1263
+ },
+ "qwen36 baseline-a": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 42.8,
+  "quotes_added_sentence_pct": 0.0,
+  "mean_chars": 6469
+ },
+ "qwen36 baseline-b": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 41.6,
+  "quotes_added_sentence_pct": 0.2,
+  "mean_chars": 6536
+ },
+ "qwen36 filler": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 42.4,
+  "quotes_added_sentence_pct": 9.6,
+  "mean_chars": 6659
+ },
+ "qwen36 grader_auto": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 51.8,
+  "quotes_added_sentence_pct": 5.2,
+  "mean_chars": 6388
+ },
+ "qwen36 mentor": {
+  "traces": 425,
+  "mentions_grading_or_testing_pct": 51.8,
+  "quotes_added_sentence_pct": 10.6,
+  "mean_chars": 6579
+ }
+}

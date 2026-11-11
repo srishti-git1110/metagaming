@@ -2,3 +2,9 @@ inspect-ai==0.3.265
 openai==3.19.0
 python-dotenv==1.2.3
 matplotlib==3.11.2
+openai-harmony==0.0.8   # Feifan harmony/ provider for organism runs (metagaming/inspect_tasks/mask_organism.py)
+# steering experiments (docs/steering-runbook.md): local HuggingFace provider + hooks
+torch==2.15.0
+transformers==5.22.2
+accelerate==1.15.0
+datasets==5.1.0

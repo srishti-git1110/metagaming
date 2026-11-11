@@ -113,7 +113,7 @@ def cot_awareness(judge=COT_JUDGE_MODEL):
         reasoning = reasoning_of(state.output.message.content) if state.output.message else ''
         if not reasoning.strip():
             return Score(value=-1.0, answer='no_reasoning', metadata={'arm': state.metadata['arm'], 'item': state.metadata['item']})
-        prompt = COT_PROMPT.format(reasoning=reasoning[:24000], final=(state.output.completion or '')[:1500])
+        prompt = COT_PROMPT.format(reasoning=reasoning[:24000], final=(state.output.message.text if state.output.message else '')[:1500])
         out = await model.generate(prompt)
         try:
             txt = out.completion or ''
