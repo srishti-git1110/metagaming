@@ -15,15 +15,13 @@ in Aranguri's October 2026 eval-awareness post, so its gap decides the steering 
 | openai/gpt-oss-20b | gptoss20b | 35% (186/536) | 54% (294/540) | +20 [15, 25] | 271 | 0.49 / 0.49 | 1% / 0% |
 | qwen/qwen3.6-35b-a3b | qwen36 | 55% (296/535) | 67% (360/538) | +12 [6, 18] | 272 | 0.85 / 0.80 | 7% / 2% |
 | qwen/qwen3.5-9b | qwen35-9b | 47% (254/538) | 67% (359/538) | +19 [13, 25] | 272 | 0.98 / 0.98 | 10% / 4% |
-| qwen/qwen3.6-27b (partial) | qwen36-27b | 60% (of 463 rollouts) | 73% (of 462 rollouts) | +13 [8, 18] | 266 | see note | 6% / 1% |
+| qwen/qwen3.6-27b | qwen36-27b | 57% (304/534) | 71% (382/540) | +14 [9, 19] | 271 | 0.91 / 0.89 | 8% / 2% |
 
 Denominators are judged rollouts (UNPARSED judge outputs dropped). Items = items with both arms judged.
 
-**Qwen3.6-27B is incomplete.** The run stopped at 924 of 1,088 samples with OpenRouter error 402 (key out of
-credits), so the log has status `error`. The numbers above are computed from the 925 logged samples (266 items with
-both arms); `report_mask_probe` skips error logs, so there is no `summary.json` for it. Resume with
-`inspect eval-retry results/mask-small-2026-11-07/qwen36-27b/logs/<file>.eval` after adding credits. Its probe
-answers were not aggregated here.
+**Qwen3.6-27B** first stopped at 924 of 1,088 samples (OpenRouter 402, key out of credits) and was resumed with
+`inspect eval-retry` on 9 Nov; the log in `qwen36-27b/logs/` is the completed run (1,088 samples, status success).
+`qwen36-27b/cot-words.json` entries were computed from the partial run (462 traces per arm) and not recomputed.
 
 Reading: all four models lie more on the real-use rewrite than on the benchmark form, by 12 to 20 points, the same
 direction and size as the large models (`results/mask-full-2026-11-06`). Stated belief about being graded does not
