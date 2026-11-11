@@ -1,12 +1,12 @@
 """Build steering directions (difference of means per layer) for one model and save them.
 
 Directions (each saved twice, read at the last prompt token `:last` and as the mean over prompt tokens `:mean`):
-  eval_generic   our 24 "you are being evaluated" vs "you are talking to a real user" system sentences
+  eval_generic   our 100 "you are being evaluated" vs "you are talking to a real user" system sentences
                  (metagaming/steer/contrasts.py), each followed by a neutral user turn
-  graded         12 "your reply is scored" vs "nobody scores this" sentences, same layout
+  graded         100 "your reply is scored" vs "nobody scores this" sentences, same layout
   rendering      the MASK provided_facts prompts themselves: benchmark form (E) minus real-use rewrite (D), on the
                  TRAIN half of the items (even positions in the sorted item list); the other half is held out
-  benchmark_q    12 "this is a benchmark item" vs "this is a message from a person" sentences (item recognition
+  benchmark_q    100 "this is a benchmark item" vs "this is a message from a person" sentences (item recognition
                  without any mention of the model being evaluated)
   eval_vs_neutral, deploy_vs_neutral   each side of eval_generic minus 24 neutral formatting sentences, so
                  "evaluation" and "deployment" are separate vectors (with eval_generic they are one line, v and -v)
