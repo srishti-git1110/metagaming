@@ -88,6 +88,47 @@ class Steer:
             self.handle = None
 
 
+class SteerAll:
+    """AISI-style steering (Read et al. 2026): adds coefs[l] * vecs[l] at the output of EVERY decoder layer l.
+    vecs: [L, d] (one vector per layer); coefs: list of L floats (already absolute, e.g. rel * residual_norm[l])."""
+
+    def __init__(self, model, vecs: torch.Tensor, coefs, scope='all'):
+        self.layers = find_layers(model)
+        assert vecs.shape[0] == len(self.layers) == len(coefs), (vecs.shape, len(self.layers), len(coefs))
+        self.steers = [Steer(model, vecs[l], l, coefs[l], scope) for l in range(len(self.layers))]
+
+    def __enter__(self):
+        for s in self.steers:
+            s.__enter__()
+        return self
+
+    def __exit__(self, *exc):
+        self.remove()
+
+    def remove(self):
+        for s in self.steers:
+            s.remove()
+
+
+def make_steer(model, directions, meta, direction, layer, coef, rel=True, scope='all'):
+    """layer: int -> Steer at that layer; 'all' -> SteerAll over every layer. Returns (steer, coef_abs or list)."""
+    if str(layer) == 'all':
+        vecs = directions[direction]                                        # [L, d]
+        if rel:
+            vecs = vecs / vecs.norm(dim=-1, keepdim=True).clamp(min=1e-6)
+            coefs = [coef * float(n) for n in meta['residual_norm']]
+        else:
+            coefs = [coef] * vecs.shape[0]
+        return SteerAll(model, vecs, coefs, scope), coefs
+    layer = int(layer)
+    vec = directions[direction][layer]
+    coef_abs = coef
+    if rel:
+        vec = vec / vec.norm().clamp(min=1e-6)
+        coef_abs = coef * float(meta['residual_norm'][layer])
+    return Steer(model, vec, layer, coef_abs, scope), coef_abs
+
+
 def load_vectors(path):
     """vectors.pt from build_vectors.py: {'directions': {name: tensor [L, d]}, 'meta': {...}}."""
     d = torch.load(path, map_location='cpu')

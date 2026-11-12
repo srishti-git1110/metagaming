@@ -3,7 +3,7 @@
 Model args (-M):
   vectors=<vectors.pt>   from metagaming.steer.build_vectors
   direction=<name>       e.g. eval_generic:last, rendering:last, graded:last, random_0:last
-  layer=<int>            decoder layer whose output gets coef * direction[layer] added
+  layer=<int>|all        decoder layer whose output gets coef * direction[layer] added; all = every layer (AISI-style)
   coef=<float>           0 = no steering (the baseline run uses the same provider so batching and template match)
   rel=true|false         true: coef is a fraction of the mean residual-stream norm at that layer (meta residual_norm
                          from build_vectors; the direction is first normalised to unit length), the convention of the
@@ -24,7 +24,7 @@ from inspect_ai.model import ChatMessageAssistant, ContentReasoning, ContentText
 from inspect_ai.model._providers.hf import HuggingFaceAPI
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from metagaming.steer.hooks import Steer, load_vectors  # noqa: E402
+from metagaming.steer.hooks import load_vectors, make_steer  # noqa: E402
 
 THINK = re.compile(r'^\s*(?:<think>)?(.*?)</think>\s*(.*)$', re.S)
 
@@ -43,7 +43,8 @@ def steer_provider():
                      config: GenerateConfig = GenerateConfig(), **model_args: Any):
             vectors = model_args.pop('vectors', None)
             direction = model_args.pop('direction', 'eval_generic:last')
-            layer = int(model_args.pop('layer', 0))
+            layer = model_args.pop('layer', 0)
+            layer = 'all' if str(layer) == 'all' else int(layer)   # 'all' = AISI-style, every layer
             coef = float(model_args.pop('coef', 0.0))
             scope = model_args.pop('scope', 'all')
             rel = str(model_args.pop('rel', 'false')).lower() in ('1', 'true', 'yes')
@@ -54,13 +55,9 @@ def steer_provider():
             self.steer = None
             if vectors and coef != 0:
                 directions, meta = load_vectors(vectors)
-                vec = directions[direction][layer]
-                coef_abs = coef
-                if rel:
-                    vec = vec / vec.norm().clamp(min=1e-6)
-                    coef_abs = coef * float(meta['residual_norm'][layer])
-                self.steer_args['coef_abs'] = coef_abs      # what is actually added: coef_abs * (unit or raw) vector
-                self.steer = Steer(self.model, vec, layer, coef_abs, scope).__enter__()
+                self.steer, coef_abs = make_steer(self.model, directions, meta, direction, layer, coef, rel, scope)
+                self.steer_args['coef_abs'] = coef_abs      # what is actually added: coef_abs * (unit or raw) vector; a list for layer=all
+                self.steer.__enter__()
 
         def hf_chat(self, messages, tools):
             chat = super().hf_chat(messages, tools)
